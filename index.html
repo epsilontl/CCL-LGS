@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Contrastive Codebook Learning for 3D Language Gaussian Splatting.">
+  <meta name="keywords" content="CCL-LGS, LangSplat, LEGaussians">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CCL-LGS: Contrastive Codebook Learning for 3D Language Gaussian Splatting</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h2 class="title is-2 publication-title" style="margin-top: 0; margin-bottom: 0">CCL-LGS: Contrastive Codebook Learning for 3D Language Gaussian Splatting</h2>
+          <br/>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://github.com/epsilontl">Lei Tian</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=o7BfVQkAAAAJ&hl=zh-CN">Xiaomin Li</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://charliememory.github.io/">Liqian Ma</a><sup>2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=PXIDvlAAAAAJ&hl=zh-CN">Hefei Huang</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=6MurICEAAAAJ&hl=zh-CN">Zirui Zheng</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/yyzq1">Hao Yin</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://github.com/MnKnight1">Taiqing Li</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?user=D3nE0agAAAAJ&hl=zh-CN&oi=sra">Huchuan Lu</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://stephenjia.github.io/">Xu Jia</a><sup>1†</sup>
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>Dalian University of Technology,</span>
+            <span class="author-block"><sup>2</sup>ZMO AI</span>
+            <span class="eql-cntrb"><small><br><sup>†</sup>Indicates Corresponding Author</small></span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv(Coming Soon)</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code(Coming Soon)</span>
+                  </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="subtitle has-text-centered" style="max-width: 986px; margin: 0 auto;">
+  CCL-LGS grounds CLIP vectors into a set of 3D Language Gaussians via contrastive codebook learning,
+  achieving high-fidelity natural language queries and flexible semantic-driven editing in 3D.
+      </h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-steve">
+          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-chair-tp">
+          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/teaser2.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <img src="./static/images/teaser.jpg"/>
+        <div class="content has-text-justified">
+          <p>
+            Recent advances in 3D reconstruction techniques and vision-language models have
+            fueled significant progress in 3D semantic understanding—a capability critical
+            to robotics, autonomous driving, and virtual/augmented reality. However, methods
+            that rely on 2D priors are prone to a critical challenge: cross-view semantic
+            inconsistencies induced by occlusion, image blur, and view-dependent variations.
+            These inconsistencies, when propagated via projection supervision, deteriorate the
+            quality of 3D Gaussian semantic fields and introduce artifacts in the rendered outputs.
+            To mitigate this limitation, we propose CCL-LGS, a novel framework that enforces view-consistent
+            semantic supervision by integrating multi-view semantic cues. Specifically, our approach first
+            employs a zero-shot tracker to align a set of 2D masks—provided by SAM—to reliably identify
+            their corresponding categories. Next, we utilize CLIP to extract robust semantic encodings
+            across views. Finally, our Contrastive Codebook Learning (CCL) module distills discriminative s
+            emantic features by enforcing intra-class compactness and inter-class distinctiveness.
+            In contrast to previous methods that directly apply CLIP to imperfect masks, our framework
+            explicitly resolves semantic conflicts while preserving category discriminability.
+            Extensive experiments demonstrate CCL-LGS's superiority over previous state-of-the-art methods.
+          </p>
+        </div>
+          <img src="./static/images/pipeline.jpg"/>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Visualization. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Visualization</h2>
+        <!-- Object Removal. -->
+        <h3 class="title is-4">3D Object Removal</h3>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                  controls
+                  muted
+                  preload
+                  playsinline
+                  width="100%">
+            <source src="./static/videos/teatime.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                  controls
+                  muted
+                  preload
+                  playsinline
+                  width="100%">
+            <source src="./static/videos/kitchen.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!-- Object Removal. -->
+
+        <!-- Object Inpainting. -->
+        <h3 class="title is-4">3D Object Inpainting</h3>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                  controls
+                  muted
+                  preload
+                  playsinline
+                  width="100%">
+            <source src="./static/videos/figurines.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="content has-text-centered">
+          <video id="replay-video"
+                  controls
+                  muted
+                  preload
+                  playsinline
+                  width="100%">
+            <source src="./static/videos/ramen.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <!-- Object Inpainting. -->
+
+        <!-- Open-vocabulary 3D Semantic Segmentation. -->
+        <h3 class="title is-4">Open-vocabulary 3D Semantic Segmentation</h3>
+        <div class="content has-text-centered">
+          <img src="./static/images/lerf.jpg"/>
+        </div>
+        <!-- Open-vocabulary 3D Semantic Segmentation. -->
+      </div>
+    </div>
+    <!-- Visualization. -->
+
+
+     <!-- Concurrent Work. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Related Links</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Thanks a lot for the previous excellent work such as
+            <a href="https://segment-anything.com">SAM</a>,
+            <a href="https://ai.meta.com/sam2/">SAM2</a>,
+            <a href="https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting">Gaussian Splatting</a>,
+            <a href="https://ymq2017.github.io/gaussian-grouping/">Gaussian Grouping</a>,
+            <a href="https://langsplat.github.io/">LangSplat</a>
+            and <a href="https://buaavrcg.github.io/LEGaussians/">LEGaussians</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Concurrent Work. -->
+
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code></code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+            This webpage template is from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
+            We sincerely thank <a href="https://keunhong.com/">Keunhong Park</a> for developing and open-sourcing this template.
+          </p>
+        </div>
+      </div>
+          <p></p>
+        </div>
+      </div>
+</footer>
+
+</body>
+</html>
